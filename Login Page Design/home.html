@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+
+    <div class="parent">
+
+        <div class="head">
+            <div class="title"> <b> Login to Coding Market</b></div>
+            <div>
+                <label for="inputBox1"> Email or Username</label> <br>
+                <input class="inputbox1" type="text" id="inputBox1">
+            </div>
+            <div>
+                <label for="inputBox2"> Enter your Password</label><br>
+                <input class="inputbox1" type="password" id="inputBox2">
+            </div>
+      
+            <div class="loginbut">
+                <button onclick="get()" id="information"> LogIn</button>
+                <p id="result"></p>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        function get(){
+            console.log("Function called");
+            var email = document.getElementById("inputBox1").value;
+            var pass = document.getElementById("inputBox2").value;
+            var email1 = document.getElementById("inputBox1");
+            var pass1 = document.getElementById("inputBox2");
+            var res = document.getElementById("result");
+
+            if ((email.length >= 4) && (pass.length >= 6 || pass.length <= 12)) {
+                res.innerHTML = " Login Successfull !"
+                // email1.className = "green"
+                // pass1.className = "green"
+                // res.className = "success"
+         }else if (email == "" || pass == "") {
+                res.innerHTML = "Username and Password cannot be Empty !"
+                // email1.className = "red";
+                // pass1.className = "red";
+                // res.className = "redcol"
+
+            }else{
+                res.innerHTML = "Username and Password is wrong!"
+                
+            }
+            
+            
+
+        }
+    </script>    
+</body>
+</html>
